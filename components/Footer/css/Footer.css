@@ -1,0 +1,42 @@
+@import url("../../../css/Common.css");
+@import url("../../../css/Home.css");
+
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Footer .ListRow {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.FooterLink {
+  color: var(--DarkColor);
+  text-transform: uppercase;
+  font: normal 500 0.875rem "BarlowRegular";
+}
+
+.FooterLink:hover {
+  opacity: 0.7;
+}
+
+.FooterLink:active {
+  opacity: 0.5;
+}
+
+@media (max-width: 1290px) {
+  .Footer .ListRow {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Footer {
+    position: absolute;
+    left: 120%;
+    bottom: 30px;
+  }
+}

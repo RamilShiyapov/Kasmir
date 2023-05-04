@@ -1,0 +1,357 @@
+@import url("Common.css");
+@import url("../components/Header/css/Header.css");
+@import url("../components/Footer/css/Footer.css");
+
+@font-face {
+  font-family: "BarlowRegular";
+  src: url("../fonts/BarlowRegular.woff2");
+}
+
+:root {
+  --DarkColor: rgb(5, 2, 21);
+  --BrownColor: rgb(180, 151, 123);
+  --WhiteSmokeColor: rgb(229, 229, 229);
+}
+
+html,
+body {
+  background: url("../images/Home/Ellipse.svg") 50vw 90vh no-repeat, 
+  url("../images/Home/Ellipse.svg") 70vw 50vh no-repeat, 
+  url("../images/Home/Ellipse.svg") 95vw 12vh no-repeat;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.Container {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.Aside {
+  display: flex;
+  gap: 90px;
+  position: relative;
+}
+
+.Step {
+  min-width: 200px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 10px;
+  border-right: 2px solid var(--WhiteSmokeColor);
+}
+
+.SmallTitle {
+  color: var(--DarkColor);
+  font: normal 500 1.875rem "BarlowRegular";
+}
+
+.Column {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.Step > .Column {
+  min-height: 360px;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepText {
+  color: var(--BrownColor);
+  font: normal 500 3.375rem/4rem "BarlowRegular";
+}
+
+.StepText:last-child {
+  color: rgb(228, 214, 201);
+}
+
+.StepProgress {
+  background-color: var(--WhiteSmokeColor);
+  width: 4px;
+  height: 200px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.StepProgress span {
+  background-color: var(--BrownColor);
+  width: 4px;
+  height: 42px;
+  border-radius: 2px;
+  position: absolute;
+  top: 0px;
+}
+
+.StepButton {
+  padding: 35px 25px;
+  border-radius: 50px;
+  border: 2px solid var(--BrownColor);
+}
+
+.StepButton:hover {
+  background-color: rgb(180 151 123 / 40%);
+}
+
+.StepButton:active {
+  opacity: 0.6;
+}
+
+.TopStepButton {
+  transform: rotate(180deg);
+}
+
+.AsideColumn {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HomeBanner {
+  width: 27.08vw;
+  height: 74.07vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.HomeBanner > picture > img {
+  width: 27.08vw;
+  height: 74.07vh;
+  object-fit: cover;
+}
+
+.HomeBannerFooter {
+  background-color: rgb(255 255 255 / 30%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  padding: 10px;
+}
+
+.HomeBannerText {
+  color: white;
+  text-align: center;
+  font: normal 500 clamp(2vh, 28px, 3vw)/clamp(2vh, 34px, 3vw) "BarlowRegular";
+}
+
+.Content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  padding: 0vh 0vh 0vh 9vh;
+}
+
+.Main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+}
+
+.Info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+}
+
+.Title {
+  color: var(--DarkColor);
+  max-width: 517px;
+  font: normal 600 4rem/4.8rem "BarlowRegular";
+}
+
+.Inner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Text {
+  color: rgba(5, 2, 21, 0.75);
+  max-width: 650px;
+  max-height: 290px;
+  overflow: auto;
+  font: normal 400 1.125rem/2rem "BarlowRegular";
+}
+
+.Text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.Text::-webkit-scrollbar-track {
+  background-color: var(--WhiteSmokeColor);
+  border-radius: 2px;
+}
+
+.Text::-webkit-scrollbar-thumb {
+  background-color: var(--BrownColor);
+  border-radius: 2px;
+}
+
+.Button {
+  background-color: var(--BrownColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid var(--BrownColor);
+}
+
+.Button:hover {
+  background-color: rgb(180 151 123 / 70%);
+}
+
+.Button:active {
+  opacity: 0.5;
+}
+
+.ButtonText {
+  color: white;
+  font: normal 400 1.125rem "BarlowRegular";
+}
+
+.SlideNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 110px;
+  bottom: 50px;
+}
+
+.SlideNumberText {
+  -webkit-text-stroke: 3px var(--BrownColor);
+  -webkit-text-fill-color: transparent;
+  color: var(--BrownColor);
+  font: normal 500 12.5rem "BarlowRegular";
+}
+
+@media (max-width: 1290px) {
+  .Aside {
+    gap: 40px;
+  }
+
+  .Content {
+    padding: 0vh 0vh 0vh 2vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .AsideColumn {
+    height: 75vh;
+  }
+
+  .AsideColumn :where(.HomeBanner, .HomeBanner > picture > img) {
+    height: 61vh;
+  }
+
+  .Step {
+    min-width: 125px;
+  }
+
+  .Title {
+    text-align: center;
+  }
+
+  .Content {
+    gap: 35px;
+  }
+
+  .SlideNumber {
+    right: 45px;
+    bottom: 18px;
+  }
+
+  .SlideNumberText {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .Aside {
+    gap: unset;
+  }
+
+  .AsideColumn {
+    position: static;
+  }
+
+  .HomeBanner {
+    display: none;
+  }
+
+  .Content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .Step {
+    min-width: unset;
+  }
+
+  .SmallTitle {
+    font-size: 1rem;
+  }
+
+  .StepText {
+    font-size: 2rem;
+  }
+
+  .StepProgress {
+    height: 150px;
+  }
+
+  .StepButton {
+    padding: 20px 10px;
+  }
+
+  .Title {
+    font-size: 2rem;
+    line-height: unset
+  }
+
+  .Inner {
+    align-items: center;
+  }
+
+  .Text {
+    line-height: unset;
+    text-align: center;
+  }
+}

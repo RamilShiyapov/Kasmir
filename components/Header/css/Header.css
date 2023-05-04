@@ -1,0 +1,212 @@
+@import url("../../../css/Common.css");
+@import url("../../../css/Home.css");
+
+:root {
+  --HeaderHeight: 4rem;
+}
+
+.NavigationRow {
+  display: flex;
+}
+
+.NavigationColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.ListRow {
+  display: flex;
+  gap: 60px;
+}
+
+.ListRowItem {
+  display: flex;
+}
+
+.ListColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.ListColumnItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  width: 100%;
+  min-height: var(--HeaderHeight);
+  display: flex;
+  align-items: flex-end;
+}
+
+.HeaderContent {
+  width: 100%;
+  min-height: var(--HeaderHeight);
+  display: flex;
+  align-items: flex-end;
+}
+
+.HeaderMenu {
+  width: 100%;
+  max-height: var(--HeaderHeight);
+  display: flex;
+  gap: 90px;
+  align-items: center;
+}
+
+.MobileMenuButton {
+  display: none;
+}
+
+.HeaderLink {
+  color: var(--DarkColor);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  font: normal 400 1.125rem "BarlowRegular";
+}
+
+.HeaderLink:hover {
+  opacity: 0.7;
+}
+
+.HeaderLink:active {
+  opacity: 0.5;
+}
+
+.HeaderLinkClicked {
+  color: var(--BrownColor);
+}
+
+.HeaderButton {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.HeaderButton:hover {
+  opacity: 0.7;
+}
+
+.HeaderButton:active {
+  opacity: 0.5;
+}
+
+.NotificationIcon {
+  background-color: var(--DarkColor);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.NotificationIcon span {
+  color: white;
+  font: normal 400 0.625rem "BarlowRegular";
+}
+
+@media (max-width: 1320px) {
+  .MobileMenuButton {
+    background: linear-gradient(
+      to bottom,
+      transparent calc(50% - 0.05rem),
+      black calc(50% - 0.05rem),
+      black calc(50% + 0.05rem),
+      transparent calc(50% + 0.05rem)
+    );
+    appearance: none;
+    width: 2rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+  }
+
+  .MobileMenuButton:hover {
+    opacity: 0.8;
+  }
+
+  .MobileMenuButton:active {
+    opacity: 0.5;
+  }
+
+  .MobileMenuButton::before,
+  .MobileMenuButton::after {
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 0.125rem;
+    pointer-events: none;
+    position: relative;
+  }
+
+  .MobileMenuButton:checked {
+    background: unset;
+    transform: translate(0rem, -0.375rem);
+  }
+
+  .MobileMenuButton:checked::before {
+    background-color: white;
+    transform: rotate(45deg) translate(0.8rem, 0.8rem);
+  }
+
+  .MobileMenuButton:checked::after {
+    background-color: white;
+    transform: rotate(-45deg);
+  }
+
+  .HeaderMenu {
+    background-color: rgb(36 36 36 / 50%);
+    width: 100%;
+    height: 100vh;
+    max-height: unset;
+    overflow: auto;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 2;
+    gap: 16px;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: column;
+    padding: 32px;
+  }
+
+  .HeaderMenu .NavigationRow {
+    flex-direction: column;
+  }
+
+  .HeaderMenu .ListRow {
+    gap: 16px;
+    align-items: unset;
+    flex-direction: column;
+  }
+
+  .MobileMenuButton:checked ~ .HeaderMenu {
+    top: 0px;
+  }
+
+  .MobileMenuButton:checked ~ .HeaderMenu::before{
+    display: block;
+  }
+
+  .HeaderLink {
+    color: white;
+    width: 100%;
+    justify-content: unset;
+    transition: 0.5s ease;
+  }
+}
